@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Application web de gestion de budget – RANDRIAMAMORISON Nantenaina Olidon</title>
+<meta name="description" content="Application web de suivi de budget permettant d’enregistrer ses revenus et ses dépenses, et de visualiser l’évolution de ses finances.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-theme" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+<symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9S9.5 5.5 12 3z"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.500M22 9v6"/></symbol>
+<symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 7v10M18 10c0 4-6 3-12 7"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4 10 14M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.700-5A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.500 3 6.500 6.500 6.500l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.5v.01M12 16v-5.5M12 13c0-1.5 1-2.5 2.5-2.5S17 11.5 17 13v3"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V9H6.5v3H9v9h3v-9h2.5l.5-3h-3V6.5c0-.3.2-.5.5-.5H15z"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.8-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.2 12 20 12 20z" fill="currentColor"/></symbol>
+</defs></svg>
+<header><div class="bar">
+<a class="brand" href="index.html" aria-label="Accueil"><span class="logo" aria-hidden="true"><img src="assets/olidon.jpg" alt="" onerror="this.remove()"></span><span class="who"><b>RANDRIAMAMORISON  <br><span>Nantenaina Olidon</span></b></span></a>
+<nav id="nav" aria-label="Navigation principale"><a href="index.html#accueil"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg><span>Accueil</span></a><a href="index.html#apropos"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg><span>À propos</span></a><a href="index.html#competences"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg><span>Compétences</span></a><a class="on" href="index.html#projets" aria-current="true"><svg class="i" aria-hidden="true"><use href="#i-folder"/></svg><span>Projets</span></a><a href="index.html#experience"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg><span>Expérience</span></a><a href="index.html#services"><svg class="i" aria-hidden="true"><use href="#i-brief"/></svg><span>Services</span></a><a class="nav-contact" href="contact.html"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span>Me contacter</span></a></nav>
+<div class="actions">
+<a class="cta" href="contact.html"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Contact</a>
+<button class="ibtn" id="t" type="button" aria-label="Changer de thème"><svg class="i" aria-hidden="true"><use href="#i-theme"/></svg></button>
+<button class="ibtn burger" id="bg" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg></button>
+</div>
+</div></header>
+<main class="pd">
+<a class="pd-back" href="index.html#projets"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>Tous les projets</a>
+<div class="pd-head">
+<span class="sk-pill"><svg class="i" aria-hidden="true"><use href="#i-folder"/></svg>I-ZOTRA</span>
+<h1 class="sk-title">I-ZOTRA</h1>
+<p class="sk-sub">site web de réservation de taxi et de transport de colis</p>
+</div>
+<div class="pd-media"><img src="assets/izotra.png" alt="Aperçu du projet Application web de gestion de budget" onerror="this.remove()"><span class="pj-fallback" aria-hidden="true"><svg class="i"><use href="#i-code"/></svg></span></div>
+<div class="pd-grid">
+<div class="pd-main">
+<div class="pd-card"><h2>Contexte</h2><p>I-ZOTRA est une plateforme web conçue pour faciliter la réservation de taxi et le transport de colis. Elle permet aux utilisateurs de réserver un trajet, de renseigner les informations nécessaires à leur déplacement et d'organiser l'envoi de colis</p></div>
+<div class="pd-card"><h2>Objectifs</h2><ul><li>Simplifier la réservation de taxi</li><li>Faciliter le transport de colis entre différentes destinations</li><li>Améliorer le suivi des réservation et des colis</li><li>Permettre aux clients de renseigner leurs informations de réservation</li></ul></div>
+<div class="pd-card"><h2>Fonctionnalités</h2><ul><li>Création et gestion réservation de taxi</li><li>Saisie du nom , du prénom, de l'adresse de départ et de la destinations</li><li>Réservation pour le transport de  colis</li><li>Consultation des informations de réservation</li><li>Gestion des réservation par un administrateur</li><li>suivi du statu des réservation</li></ul></div>
+<div class="pd-card"><h2>Technologies utilisées</h2><ul class="pd-stack"><li><b>React.js</b><span>Développement de l'interface utilisateur</span></li><li><b>HTML5</b><span>Structure des pages</span></li><li><b>Python</b><span>Développement du Backend</span></li><li><b>FastAPi</b><span>API backend , selon le framework utilisé</span></li><li><b>Base de données</b><span>Stockage des clients, réservation et colis</span></li></ul></div>
+<div class="pd-card"><h2>Ce que j’ai appris</h2><ul><li>Structurer une application JavaScript sans framework</li><li>Manipuler une base clé-valeur comme Redis</li><li>Concevoir une interface claire pour des données chiffrées</li></ul></div>
+</div>
+<aside class="pd-side" aria-label="Fiche du projet">
+<div class="pd-card">
+<h2>Fiche du projet</h2>
+<dl class="pd-facts">
+<div><dt>Type</dt><dd><span class="pj-type t-perso"><svg class="i" aria-hidden="true"><use href="#i-user"/></svg>Personnel</span></dd></div>
+<div><dt>Année</dt><dd>2026</dd></div>
+<div><dt>Statut</dt><dd>Terminé</dd></div>
+<div><dt>Dépôt</dt><dd>Public</dd></div>
+<div><dt>Catégorie</dt><dd>Finance</dd></div>
+</dl>
+<ul class="pj-tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Redis</li></ul>
+<a class="pj-btn gh" href="https://github.com/mamorisonolidon-gif/I-ZOTRA" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source de : Application web de gestion de budget"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg>Voir sur GitHub</a>
+</div>
+</aside>
+</div>
+<div class="pd-pager" role="navigation" aria-label="Autres projets">
+<a href="projet-presence.html"><small>Projet précédent</small><b>Système de gestion de présence par reconnaissance faciale</b></a>
+<a class="next" href="projet-pharma.html"><small>Projet suivant</small><b>Système de gestion de pharmacie</b></a>
+</div>
+</main>
+<footer class="ft">
+<div class="ft-in">
+<div class="ft-grid">
+<div class="ft-brand">
+<a class="ft-name" href="index.html">RANDRIAMAMORISON<br>Nantenaina Olidon</a>
+<p>Développeur web &amp; mobile, étudiant à l’ISPM en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle. À la recherche d’un stage ou d’une alternance pour mettre en pratique mes compétences.</p>
+<span class="ft-avail"><i aria-hidden="true"></i>Disponible pour opportunités</span>
+</div>
+<div class="ft-col" role="navigation" aria-label="Navigation du pied de page"><h3>Navigation</h3><ul class="ft-links"><li><a href="index.html#accueil">Accueil</a></li><li><a href="index.html#apropos">À propos</a></li><li><a href="index.html#competences">Compétences</a></li><li><a href="index.html#projets">Projets</a></li><li><a href="index.html#experience">Expérience</a></li><li><a href="index.html#services">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="ft-col"><h3>Contact</h3><ul class="ft-contact">
+<li><svg class="i" aria-hidden="true"><use href="#i-call"/></svg><a href="tel:+261381983226">+261 38 19 832 26</a></li>
+<li><svg class="i" aria-hidden="true"><use href="#i-call"/></svg><a href="tel:+261387211818">+261 38 72 118 18</a></li>
+<li><svg class="i" aria-hidden="true"><use href="#i-wa"/></svg><a href="https://wa.me/261381983226" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+<li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:mamorisonolidon@gmail.com">mamorisonolidon@gmail.com</a></li>
+<li><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span>Antananarivo, Madagascar</span></li>
+<li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>GMT+3</span></li>
+</ul></div>
+<div class="ft-col"><h3>Réseaux sociaux</h3><ul class="ft-social">
+<li><a href="https://github.com/mamorisonolidon-gif" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/VOTRE-PROFIL" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-in"/></svg>LinkedIn</a></li>
+<li><a href="https://www.facebook.com/olidon.randriamamorison" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a></li>
+<li><a href="mailto:mamorisonolidon@gmail.com"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Email</a></li>
+</ul></div>
+</div>
+<div class="ft-bottom"><span>© 2026 RANDRIAMAMORISON Nantenaina Olidon. Tous droits réservés.</span><span class="ft-made">Fait avec <svg class="i" aria-hidden="true"><use href="#i-heart"/></svg> en HTML, CSS &amp; JavaScript</span></div>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
